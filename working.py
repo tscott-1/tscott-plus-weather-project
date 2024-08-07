@@ -27,7 +27,28 @@
 #         temp_in_f = -10
 #         expected_result = -23.3
 
-temp_in_farenheit = -10
+# temp_in_farenheit = -10
 
-temp_in_c =(float(temp_in_farenheit) - 32) * 5/9
-print(round(temp_in_c,1))
+# temp_in_c =(float(temp_in_farenheit) - 32) * 5/9
+# print(round(temp_in_c,1))
+
+
+# def calculate_mean(weather_data):
+#     """Calculates the mean value from a list of numbers.
+
+#     Args:
+#         weather_data: a list of numbers.
+#     Returns:
+#         A float representing the mean value.
+#     """
+#     pass
+
+import statistics
+
+#temperatures = [51.0, 58.2, 59.9, 52.4, 52.1, 48.4, 47.8, 53.43]
+# temperatures = [49, 57, 56, 55, 53]
+# temperatures = ["51", "58", "59", "52", "52", "48", "47", "53"]
+temperatures = [-51, -58, -59, -52, -52, -48, -47, -53]
+
+float_temperatures = [float(temp) for temp in temperatures]
+print(statistics.mean(float_temperatures))
