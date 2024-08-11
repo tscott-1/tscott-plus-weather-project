@@ -1,6 +1,6 @@
 import csv
 from datetime import datetime
-import statistics
+# import statistics
 
 DEGREE_SYMBOL = u"\N{DEGREE SIGN}C"
 
@@ -50,8 +50,16 @@ def calculate_mean(weather_data):
     Returns:
         A float representing the mean value.
     """
-    temperatures = [float(temperature) for temperature in weather_data]
-    return(statistics.mean(temperatures))
+    sum_temperatures = 0
+    list_length = len(weather_data)
+    for temperature in weather_data:
+        sum_temperatures = sum_temperatures + float(temperature)
+    print(sum_temperatures/list_length)
+    list_length = len(weather_data)
+
+    return sum_temperatures/list_length
+    # temperatures = [float(temperature) for temperature in weather_data]
+    # return(statistics.mean(temperatures))
 
 
 def load_data_from_csv(csv_file):
