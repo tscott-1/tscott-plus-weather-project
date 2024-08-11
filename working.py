@@ -50,11 +50,11 @@
 # temperatures = ["51", "58", "59", "52", "52", "48", "47", "53"]
 temperatures = [-51, -58, -59, -52, -52, -48, -47, -53]
 
-sum_temperatures = 0
-list_length = len(temperatures)
-for temperature in temperatures:
-    sum_temperatures = sum_temperatures + float(temperature)
-print(sum_temperatures/list_length)
+# sum_temperatures = 0
+# list_length = len(temperatures)
+# for temperature in temperatures:
+#     sum_temperatures = sum_temperatures + float(temperature)
+# print(sum_temperatures/list_length)
 
 # float_temperatures = [float(temp) for temp in temperatures]
 # print(statistics.mean(float_temperatures))
@@ -95,13 +95,21 @@ print(sum_temperatures/list_length)
 #             ["2020-06-25T07:00:00+08:00", -48, 66],
 #             ["2020-06-26T07:00:00+08:00", 53, 66]
 #         ]
+from weather import load_data_from_csv
+import csv
 
-# import csv
-
-# csv_file = "./tests/data/example_one.csv"
+csv_file = "./tests/data/example_one.csv"
+csv_file = "./tests/data/example_two.csv"
 
 # with open(csv_file, newline='') as f:
 #     reader = csv.reader(f)
 #     data = list(reader)
+#     data1 = data[1:]
+#     data2 = []
+#     for set in data1:
+#         data2.append([set[0],float(set[1]),float(set[2])])
+# print(data2)
 
-# print(data)
+data = load_data_from_csv(csv_file)
+
+print(data)
