@@ -1,12 +1,11 @@
-# from datetime import datetime
+from datetime import datetime
 
-# date = "2021-07-05T07:00:00+08:00"
-#         # expected_result = "Monday 05 July 2021"
-#         # result = weather.convert_date(date)
+date = "2021-07-05T07:00:00+08:00"
+        # expected_result = "Monday 05 July 2021"
+        # result = weather.convert_date(date)
 
-# datestr=datetime.fromisoformat(date)
-# print(f"{datestr.strftime("%A")} {datestr.strftime("%d")} {datestr.strftime("%B")} {datestr.strftime("%Y")}")
- 
+datestr=datetime.fromisoformat(date)
+print(datestr.strftime("%A %d %B %Y"))
 # 
 # 
 #     
@@ -48,7 +47,7 @@
 #temperatures = [51.0, 58.2, 59.9, 52.4, 52.1, 48.4, 47.8, 53.43]
 # temperatures = [49, 57, 56, 55, 53]
 # temperatures = ["51", "58", "59", "52", "52", "48", "47", "53"]
-temperatures = [-51, -58, -59, -52, -52, -48, -47, -53]
+# temperatures = [-51, -58, -59, -52, -52, -48, -47, -53]
 
 # sum_temperatures = 0
 # list_length = len(temperatures)
@@ -95,8 +94,8 @@ temperatures = [-51, -58, -59, -52, -52, -48, -47, -53]
 #             ["2020-06-25T07:00:00+08:00", -48, 66],
 #             ["2020-06-26T07:00:00+08:00", 53, 66]
 #         ]
-from weather import load_data_from_csv
-import csv
+# from weather import load_data_from_csv
+# import csv
 
 # csv_file = "./tests/data/example_one.csv"
 # csv_file = "./tests/data/example_two.csv"
@@ -114,8 +113,8 @@ import csv
 
 # print(data)
 
-temperatures = [49, 57, 56, 55, 53]
-expected_result = (49.0, 0)
+# temperatures = [49, 57, 56, 55, 53]
+# expected_result = (49.0, 0)
 
 # temperatures = [-10, -8, 2, -16, 4]
 # expected_result = (-16.0, 3)
@@ -128,11 +127,11 @@ expected_result = (49.0, 0)
 
 # temperatures = [49, 57, 56, 55, 53, 49]
 # expected_result = (49.0, 5)
-temperatures = []
+# temperatures = []
 
-from weather import find_min
+# from weather import find_min
 
-print(find_min(temperatures))
+# print(find_min(temperatures))
 
 # min_temperature = min(temperatures)
 # list_length = len(temperatures)

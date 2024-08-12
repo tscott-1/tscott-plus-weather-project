@@ -26,8 +26,7 @@ def convert_date(iso_string):
         A date formatted like: Weekday Date Month Year e.g. Tuesday 06 July 2021
     """
     datestr=datetime.fromisoformat(iso_string)
-    return f"{datestr.strftime("%A")} {datestr.strftime("%d")} {datestr.strftime("%B")} {datestr.strftime("%Y")}"
-
+    return f"{datestr.strftime("%A %d %B %Y")}"
 
 
 def convert_f_to_c(temp_in_fahrenheit):
@@ -54,9 +53,6 @@ def calculate_mean(weather_data):
     list_length = len(weather_data)
     for temperature in weather_data:
         sum_temperatures = sum_temperatures + float(temperature)
-    # print(sum_temperatures/list_length)
-    list_length = len(weather_data)
-
     return sum_temperatures/list_length
     # temperatures = [float(temperature) for temperature in weather_data]
     # return(statistics.mean(temperatures))
