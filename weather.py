@@ -89,7 +89,16 @@ def find_min(weather_data):
     Returns:
         The minimum value and it's position in the list. (In case of multiple matches, return the index of the *last* example in the list.)
     """
-    pass
+
+    if not weather_data:
+        return ()
+    else:
+        temperatures = [float(temp) for temp in weather_data]
+        min_temperature = float(min(temperatures))
+        reversed_temperatures = list(reversed(temperatures))
+        reverse_temp_index = reversed_temperatures.index(min_temperature)
+        temp_index = len(weather_data)-1-reverse_temp_index
+        return (min_temperature,temp_index)
 
 
 def find_max(weather_data):
@@ -100,7 +109,15 @@ def find_max(weather_data):
     Returns:
         The maximum value and it's position in the list. (In case of multiple matches, return the index of the *last* example in the list.)
     """
-    pass
+    if not weather_data:
+        return ()
+    else:
+        temperatures = [float(temp) for temp in weather_data]
+        min_temperature = float(max(temperatures))
+        reversed_temperatures = list(reversed(temperatures))
+        reverse_temp_index = reversed_temperatures.index(min_temperature)
+        temp_index = len(weather_data)-1-reverse_temp_index
+        return (min_temperature,temp_index)
 
 
 def generate_summary(weather_data):

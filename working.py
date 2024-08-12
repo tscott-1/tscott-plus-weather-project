@@ -98,18 +98,57 @@ temperatures = [-51, -58, -59, -52, -52, -48, -47, -53]
 from weather import load_data_from_csv
 import csv
 
-csv_file = "./tests/data/example_one.csv"
-csv_file = "./tests/data/example_two.csv"
+# csv_file = "./tests/data/example_one.csv"
+# csv_file = "./tests/data/example_two.csv"
 
-# with open(csv_file, newline='') as f:
-#     reader = csv.reader(f)
-#     data = list(reader)
-#     data1 = data[1:]
-#     data2 = []
-#     for set in data1:
-#         data2.append([set[0],float(set[1]),float(set[2])])
-# print(data2)
+# # with open(csv_file, newline='') as f:
+# #     reader = csv.reader(f)
+# #     data = list(reader)
+# #     data1 = data[1:]
+# #     data2 = []
+# #     for set in data1:
+# #         data2.append([set[0],float(set[1]),float(set[2])])
+# # print(data2)
 
-data = load_data_from_csv(csv_file)
+# data = load_data_from_csv(csv_file)
 
-print(data)
+# print(data)
+
+temperatures = [49, 57, 56, 55, 53]
+expected_result = (49.0, 0)
+
+# temperatures = [-10, -8, 2, -16, 4]
+# expected_result = (-16.0, 3)
+
+# temperatures = [10.4, 14.5, 12.9, 8.9, 10.5, 11.7]
+# expected_result = (8.9, 3)
+
+# temperatures = ["49", "57", "56", "55", "53", "49"]
+# expected_result = (49.0, 5)
+
+# temperatures = [49, 57, 56, 55, 53, 49]
+# expected_result = (49.0, 5)
+temperatures = []
+
+from weather import find_min
+
+print(find_min(temperatures))
+
+# min_temperature = min(temperatures)
+# list_length = len(temperatures)
+# reversed_temperatures = list(reversed(temperatures))
+# reverse_temp_index = reversed_temperatures.index(min_temperature)
+# temp_index = len(temperatures)-1-reverse_temp_index
+
+# print((float(min_temperature),temp_index))
+                
+
+# for temperature in list(reversed(temperatures)):
+#     if temperature == min_temperature:
+#         temp_index = index()
+#         print(temperature, temp_index)
+
+# for temperature, ind in enumerate(temperatures):
+#     if temperature == min_temperature:
+#         print(temperature)
+#         print(ind)
