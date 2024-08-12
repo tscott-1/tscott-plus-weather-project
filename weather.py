@@ -54,7 +54,7 @@ def calculate_mean(weather_data):
     list_length = len(weather_data)
     for temperature in weather_data:
         sum_temperatures = sum_temperatures + float(temperature)
-    print(sum_temperatures/list_length)
+    # print(sum_temperatures/list_length)
     list_length = len(weather_data)
 
     return sum_temperatures/list_length
@@ -128,7 +128,29 @@ def generate_summary(weather_data):
     Returns:
         A string containing the summary information.
     """
-    pass
+    number_of_days = len(weather_data)
+
+    days=[]
+    min_temperatures = []
+    max_temperatures = []
+
+    #break the nested list into 3 separate lists for days minimum temps and maximum temps
+    for day in weather_data:
+        days.append(day[0])
+        min_temperatures.append(day[1])
+        max_temperatures.append(day[2])
+
+    minimums = find_min(min_temperatures)
+    maximums = find_max(max_temperatures)
+
+
+    output = f"{number_of_days } Day Overview\n\
+  The lowest temperature will be {format_temperature(convert_f_to_c(minimums[0]))}, and will occur on {convert_date(days[minimums[1]])}.\n\
+  The highest temperature will be {format_temperature(convert_f_to_c(maximums[0]))}, and will occur on {convert_date(days[maximums[1]])}.\n\
+  The average low this week is {format_temperature(convert_f_to_c(calculate_mean(min_temperatures)))}.\n\
+  The average high this week is {format_temperature(convert_f_to_c(calculate_mean(max_temperatures)))}.\n"
+    # print(output)
+    return output
 
 
 def generate_daily_summary(weather_data):
