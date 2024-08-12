@@ -73,7 +73,7 @@ def load_data_from_csv(csv_file):
     with open(csv_file, newline='') as f:
         reader = csv.reader(f)
         data = list(reader)
-        data1 = data[1:]
+        data1 = filter(None,data[1:])
         print(data1)
         data2 = []
         for set in data1:
