@@ -66,15 +66,20 @@ def load_data_from_csv(csv_file):
     Returns:
         A list of lists, where each sublist is a (non-empty) line in the csv file.
     """
-    with open(csv_file, newline='') as f:
-        reader = csv.reader(f)
-        data = list(reader)
-        data1 = filter(None,data[1:])
-        print(data1)
-        data2 = []
-        for set in data1:
-         data2.append([set[0],float(set[1]),float(set[2])])
-    return data2
+    with open(csv_file, newline='') as file:
+        reader = csv.reader(file)
+        #create a nested list from the imported file
+        weather = list(reader)
+        #remove any empty nested lists (filter none) and return from second nested list[1:] to remove header data
+        weather_clean = filter(None,weather[1:])
+        # print(weather_clean)
+        #create an empty list to put in reformatted data then loop through nested lists
+        weather_floats = []
+        for set in weather_clean:
+            #add values from original list to new list in appropriate format for each column - floats for temperatures
+            weather_floats.append([set[0],float(set[1]),float(set[2])])
+    #return new list        
+    return weather_floats
 
 
 def find_min(weather_data):
@@ -85,15 +90,22 @@ def find_min(weather_data):
     Returns:
         The minimum value and it's position in the list. (In case of multiple matches, return the index of the *last* example in the list.)
     """
-
+    #return empty tuple if an empty list is provided  
     if not weather_data:
         return ()
+    #if there is data process it to find the minimum
     else:
+        #create a new list temperatures looping through each temperature in the list and converting to float
         temperatures = [float(temp) for temp in weather_data]
+        #find the minimum temperature - return as a float
         min_temperature = float(min(temperatures))
+        #reverse the order of the list to allow me to find the index of the LAST occurence
         reversed_temperatures = list(reversed(temperatures))
+        #find the index of the first miminum temperature in the reversed list
         reverse_temp_index = reversed_temperatures.index(min_temperature)
+        #calculate the index from the original list using length of the list - 1 - the index of the reversed list minimum
         temp_index = len(weather_data)-1-reverse_temp_index
+        #return the originally calculated minimum temp with the recalculated index
         return (min_temperature,temp_index)
 
 
@@ -125,17 +137,19 @@ def generate_summary(weather_data):
         A string containing the summary information.
     """
     number_of_days = len(weather_data)
-
+    #create empty lists to store each group of data needed for this process
     days=[]
     min_temperatures = []
     max_temperatures = []
 
-    #break the nested list into 3 separate lists for days minimum temps and maximum temps
+    #loop through each nested list
+    #break each nested list into 3 separate lists for days minimum temps and maximum temps
     for day in weather_data:
         days.append(day[0])
         min_temperatures.append(day[1])
         max_temperatures.append(day[2])
 
+    #use functions to pull out min and max temperatures with the index which can then be used to pull out the corresponding day
     minimums = find_min(min_temperatures)
     maximums = find_max(max_temperatures)
 
