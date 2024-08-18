@@ -7,6 +7,7 @@ from tests.test_find_min import FindMinTests
 from tests.test_find_max import FindMaxTests
 from tests.test_generate_summary import GenerateSummaryTests
 from tests.test_generate_daily_summary import GenerateDailySummaryTests
+from tests.test_find_last_index import FindIndexTests
 
 runner = unittest.TextTestRunner()
 
@@ -19,3 +20,4 @@ runner.run(unittest.TestSuite((unittest.TestLoader().loadTestsFromTestCase(FindM
 runner.run(unittest.TestSuite((unittest.TestLoader().loadTestsFromTestCase(FindMaxTests))))
 runner.run(unittest.TestSuite((unittest.TestLoader().loadTestsFromTestCase(GenerateSummaryTests))))
 runner.run(unittest.TestSuite((unittest.TestLoader().loadTestsFromTestCase(GenerateDailySummaryTests))))
+runner.run(unittest.TestSuite((unittest.TestLoader().loadTestsFromTestCase(FindIndexTests))))

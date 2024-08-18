@@ -73,6 +73,8 @@ def load_data_from_csv(csv_file):
     # """creating a function to find the index of the last occurence of a number in a list to be used in max and min functions - returns an integer of the index"""
 
 def find_last_value_in_list(input_list,value):
+    if not input_list:
+        return None
     #reverse the order of the list
     reversed_list = list(reversed(input_list))
     #find the index of the first value occurence in the reversed list
