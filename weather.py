@@ -75,6 +75,8 @@ def load_data_from_csv(csv_file):
 def find_last_value_in_list(input_list,value):
     if not input_list:
         return None
+    if not value:
+        return None
     #reverse the order of the list
     reversed_list = list(reversed(input_list))
     #find the index of the first value occurence in the reversed list
