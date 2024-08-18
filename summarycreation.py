@@ -104,3 +104,8 @@ example_one = [
 from weather import generate_daily_summary
 
 print(generate_daily_summary(example_one))
+
+# from weather import generate_summary
+
+# frog = generate_summary(example_one)
+# print(frog)
