@@ -1,7 +1,8 @@
 # Plus Resources: Weather Project Template
 
-Starter code for the Plus Weather project.
+[![Tests](https://github.com/tscott-1/tscott-plus-weather-project/actions/workflows/tests.yml/badge.svg)](https://github.com/tscott-1/tscott-plus-weather-project/actions/workflows/tests.yml)
 
+Code for the Plus Weather Project
 ## TODO
 
 - [x] Implement the methods in `weather.py`.
