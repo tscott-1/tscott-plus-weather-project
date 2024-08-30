@@ -44,16 +44,16 @@ print(datestr.strftime("%A %d %B %Y"))
 
 # import statistics
 
-#temperatures = [51.0, 58.2, 59.9, 52.4, 52.1, 48.4, 47.8, 53.43]
+# temperatures = [51.0, 58.2, 59.9, 52.4, 52.1, 48.4, 47.8, 53.43]
 # temperatures = [49, 57, 56, 55, 53]
 # temperatures = ["51", "58", "59", "52", "52", "48", "47", "53"]
-# temperatures = [-51, -58, -59, -52, -52, -48, -47, -53]
+temperatures = [-51, -58, -59, -52, -52, -48, -47, -53]
 
-# sum_temperatures = 0
-# list_length = len(temperatures)
-# for temperature in temperatures:
-#     sum_temperatures = sum_temperatures + float(temperature)
-# print(sum_temperatures/list_length)
+sum_temperatures = 0
+list_length = len(temperatures)
+for temperature in temperatures:
+    sum_temperatures = sum_temperatures + float(temperature)
+print(sum_temperatures/list_length)
 
 # float_temperatures = [float(temp) for temp in temperatures]
 # print(statistics.mean(float_temperatures))
