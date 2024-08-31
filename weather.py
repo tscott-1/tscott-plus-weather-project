@@ -4,6 +4,12 @@ from datetime import datetime
 
 DEGREE_SYMBOL = "\N{DEGREE SIGN}C"
 
+logging.basicConfig(
+    level="INFO",
+    filename="weather.log"
+    format='%{asctime}s %{levelnames} '
+)
+
 ##format Temperature:
 # """Takes a temperature and returns it in string format with the degrees
 #     and Celcius symbols.
@@ -27,7 +33,11 @@ def format_temperature(temp):
 
 
 def convert_date(iso_string):
-    return datetime.fromisoformat(iso_string).strftime("%A %d %B %Y")
+    try:
+        return datetime.fromisoformat(iso_string).strftime("%A %d %B %Y")
+    except ValueError
+        logging.error("expected blah, but got %s",iso_string)
+        return None
 
     # convert_f_to_c
     # """Converts a temperature from Fahrenheit to Celcius.
