@@ -3,9 +3,10 @@ from datetime import datetime
 date = "2021-07-05T07:00:00+08:00"
         # expected_result = "Monday 05 July 2021"
         # result = weather.convert_date(date)
+# iso_string = date
+# print(datetime.fromisoformat(iso_string).strftime("%A %d %B %Y"))
 
-datestr=datetime.fromisoformat(date)
-print(datestr.strftime("%A %d %B %Y"))
+
 # 
 # 
 #     
@@ -47,13 +48,13 @@ print(datestr.strftime("%A %d %B %Y"))
 # temperatures = [51.0, 58.2, 59.9, 52.4, 52.1, 48.4, 47.8, 53.43]
 # temperatures = [49, 57, 56, 55, 53]
 # temperatures = ["51", "58", "59", "52", "52", "48", "47", "53"]
-temperatures = [-51, -58, -59, -52, -52, -48, -47, -53]
+# temperatures = [-51, -58, -59, -52, -52, -48, -47, -53]
 
-sum_temperatures = 0
-list_length = len(temperatures)
-for temperature in temperatures:
-    sum_temperatures = sum_temperatures + float(temperature)
-print(sum_temperatures/list_length)
+# sum_temperatures = 0
+# list_length = len(temperatures)
+# for temperature in temperatures:
+#     sum_temperatures = sum_temperatures + float(temperature)
+# print(sum_temperatures/list_length)
 
 # float_temperatures = [float(temp) for temp in temperatures]
 # print(statistics.mean(float_temperatures))
@@ -94,11 +95,17 @@ print(sum_temperatures/list_length)
 #             ["2020-06-25T07:00:00+08:00", -48, 66],
 #             ["2020-06-26T07:00:00+08:00", 53, 66]
 #         ]
-# from weather import load_data_from_csv
-# import csv
+from weather import load_data_from_csv
+import csv
 
-# csv_file = "./tests/data/example_one.csv"
+csv_file = "./tests/data/example_one.csv"
 # csv_file = "./tests/data/example_two.csv"
+
+# def load_data_from_csv(csv_file):
+# with open(csv_file) as file:
+#     dictreader = csv.DictReader(file)
+#     stuff = [[row["date"], float(row["min"]), float(row["max"])] for row in dictreader if row]
+# print(stuff)
 
 # # with open(csv_file, newline='') as f:
 # #     reader = csv.reader(f)
@@ -109,9 +116,9 @@ print(sum_temperatures/list_length)
 # #         data2.append([set[0],float(set[1]),float(set[2])])
 # # print(data2)
 
-# data = load_data_from_csv(csv_file)
+data = load_data_from_csv(csv_file)
 
-# print(data)
+print(data)
 
 # temperatures = [49, 57, 56, 55, 53]
 # expected_result = (49.0, 0)

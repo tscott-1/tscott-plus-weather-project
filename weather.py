@@ -27,8 +27,7 @@ def format_temperature(temp):
 
 
 def convert_date(iso_string):
-    datestr = datetime.fromisoformat(iso_string)
-    return datestr.strftime("%A %d %B %Y")
+    return datetime.fromisoformat(iso_string).strftime("%A %d %B %Y")
 
     # convert_f_to_c
     # """Converts a temperature from Fahrenheit to Celcius.
@@ -68,10 +67,8 @@ def calculate_mean(weather_data):
 def load_data_from_csv(csv_file):
     with open(csv_file) as file:
         dictreader = csv.DictReader(file)
-        weather_floats = []
-        for row in dictreader:
-            weather_floats.append([row["date"], float(row["min"]), float(row["max"])])
-    return weather_floats
+        ldata = [[row["date"], float(row["min"]), float(row["max"])] for row in dictreader if row]
+    return ldata
 
 
     # find_last_value_in_list
